@@ -1,0 +1,107 @@
+using System;//import statement
+
+namespace ConsoleApp1
+{
+    class Program    //class is keyword Program is a class name
+    {
+      
+        public Program()//Non static Constructor (When we create Object)
+        {
+            Console.WriteLine("Non static Constructor");
+        }
+
+         static Program(){//static constructor
+            Console.WriteLine(" static Constructor");
+
+        }
+
+        static void Main(string[] args)  //static is keyword  void  empty return
+          {
+            Program p = new Program();
+
+        }//Main(-)
+    }// class
+}//namespace
+
+=====================================================================================================================
+
+using System;//import statement
+
+namespace ConsoleApp1
+{
+   public class Program
+    {
+
+        private Program()
+        {
+            Console.WriteLine("Private Constructor");
+        }
+    }
+     public  class Employee
+        {
+            static void Main(string[] args)
+            {
+
+                Program p = new Program();
+            }//Main(-)
+        
+    }// class
+}//namespace
+
+===================================================================================================================
+
+using System;//import statement
+
+namespace ConsoleApp1
+{
+
+    class Animal //Parent Class
+    {
+
+        public string animalName;
+        public string type;
+        public string color;
+
+        public void displayDetails()
+        {
+            Console.WriteLine("Animal Name:" + animalName);
+            Console.WriteLine("Type:" + type);
+            Console.WriteLine("Color:" + color);
+
+        }//displayDetails()
+    }//class
+
+    class Lion:Animal //child class
+    {
+
+        public int id;
+        public int hoursOfSleep;
+
+        public void displayLionDetails()
+        {
+            Console.WriteLine("Id:" + id);
+            Console.WriteLine("HoursOfSleep:" + hoursOfSleep);
+        }
+    
+}
+public class Program
+{
+    static void Main(string[] args)
+    {
+            Lion Li = new Lion();
+            Li.animalName = "Lion";
+            Li.type = "Non Veg";
+            Li.color = "Yellow";
+            Li.id = 1011;
+            Li.hoursOfSleep = 12;
+
+            Li.displayDetails();
+            Li.displayLionDetails();
+
+    }//Main(-)
+
+}// class
+}//namespace
+
+
+====================================================================================================================
