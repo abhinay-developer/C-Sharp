@@ -17,6 +17,8 @@ namespace Protofolio.Repository
 
          Task UpdateTask(Task task, int id);
 
+         string DeleteTask(int id);
+
          int taskCount();
 
     }

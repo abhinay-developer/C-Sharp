@@ -11,13 +11,37 @@ namespace Protofolio.Controllers
 {
     public class TaskController : ApiController
     {
+        private TaskService taskService;
+        public TaskController()
+        {
+          taskService = new TaskService();
+        }
+
+
         [HttpPost]
         [Route("api/task/insert")]
         public Task insertTask(Task task)
         {
-            TaskService taskService = new TaskService();
             return taskService.createTask(task);
         }
+        [HttpGet]
+        [Route("api/task/{id}")]
+        public Task GetTaskById(int id)
+        {
+            return taskService.FindTaskById(id);
+        }
+        [HttpGet]
+        [Route("api/task/findall")]
+        public List<Task> FindAllTask()
+        {
+            return taskService.GetAllTask();
+        }
 
+        [HttpDelete]
+        [Route("api/task/{id}")]
+        public string DeleteById(int id)
+        {
+            return taskService.removeTask(id);
+        }
     }
 }
